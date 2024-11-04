@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App.UserAPI.Business.Layer\App.UserAPI.Business.Layer.csproj" />
+    <ProjectReference Include="..\App.UserAPI.Common.Layer\App.UserAPI.Common.Layer.csproj" />
+    <ProjectReference Include="..\App.UserAPI.Service.Layer\App.UserAPI.Service.Layer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Shared.Context">
+      <HintPath>..\..\App.Shared\Shared.Context\bin\Debug\net6.0\Shared.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Encryption">
+      <HintPath>..\..\App.Shared\Shared.Encryption\bin\Debug\net6.0\Shared.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Entities">
+      <HintPath>..\..\App.Shared\Shared.Entities\bin\Debug\net6.0\Shared.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Shared.Filters">
+      <HintPath>..\..\App.Shared\Shared.Filters\bin\Debug\net6.0\Shared.Filters.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>
