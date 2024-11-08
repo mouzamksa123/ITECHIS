@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities.Entities
 {
-    public partial class MatrimonyCoreContext : DbContext, IApplicationDBContext
+    public partial class ItechisCoreContext : DbContext, IApplicationDBContext
     {
         #region DbSet
-        public virtual DbSet<UserLogin> UserLogins { get; set; }
+        //public virtual DbSet<UserLogin> UserLogins { get; set; }
         //public virtual DbSet<AdminUser> AdminUsers { get; set; } 
         #endregion
         #region Methods
