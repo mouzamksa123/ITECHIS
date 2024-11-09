@@ -10,8 +10,8 @@ namespace Shared.Entities.Infrastructure.Interface
 {
     public interface IApplicationDBContext
     {
-        //public DbSet<UserLogin> UserLogins { get; set; }
-
+        public DbSet<HisUser> UserLogins { get; set; }
+        public DbSet<HisPatientId> PatientIds { get; set; }
         Task<int> SaveChangesAsync();
         int SaveChanges();
     }

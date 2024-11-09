@@ -13,5 +13,6 @@ namespace App.UserAPI.Service.Layer.Interfaces
         UserRegistration GetUser(UserLoginObj login);
         string GetUserHashPassword(UserLoginObj login);
         bool Register(UserRegistration register);
+        IList<PatientViewModel> GetPatients();
     }
 }

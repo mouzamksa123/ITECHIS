@@ -36,5 +36,10 @@ namespace App.UserAPI.Business.Layer.Implementation
         {
             return _accountService.Register(register);
         }
+        public IList<PatientViewModel> GetPatients()
+        {
+            IList<PatientViewModel> patientViewModel = _accountService.GetPatients();
+            return patientViewModel;
+        }
     }
 }

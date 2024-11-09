@@ -13,7 +13,8 @@ namespace Shared.Entities.Entities
     {
         #region DbSet
         //public virtual DbSet<UserLogin> UserLogins { get; set; }
-        //public virtual DbSet<AdminUser> AdminUsers { get; set; } 
+        public virtual DbSet<HisUser> UserLogins { get; set; }
+        public virtual DbSet<HisPatientId> PatientIds { get; set; }
         #endregion
         #region Methods
         public Task<int> SaveChangesAsync()

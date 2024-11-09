@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Shared.Entities.Entities;
 
-public partial class ItechisContext : DbContext
+public partial class ItechisCoreContext : DbContext
 {
-    public ItechisContext()
+    public ItechisCoreContext()
     {
     }
 
-    public ItechisContext(DbContextOptions<ItechisContext> options)
+    public ItechisCoreContext(DbContextOptions<ItechisCoreContext> options)
         : base(options)
     {
     }

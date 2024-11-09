@@ -28,9 +28,9 @@ namespace App.UserAPI.Service.Layer.Implementation
 
         public UserRegistration GetUser(UserLoginObj login)
         {
-            UserLogin userLogin = _dbContext.UserLogins.AsNoTracking()
-                .Where(x => x.UserLoginName.Trim().ToLower() == login.UserLogin.Trim()).FirstOrDefault();
-            UserRegistration userRegistration = _mapper.Map<UserLogin ,UserRegistration>(userLogin);
+            HisUser userLogin = _dbContext.UserLogins.AsNoTracking()
+                .Where(x => x.UserName.Trim().ToLower() == login.UserLogin.Trim()).FirstOrDefault();
+            UserRegistration userRegistration = _mapper.Map<HisUser ,UserRegistration>(userLogin);
             return userRegistration;
         }
 
@@ -41,14 +41,22 @@ namespace App.UserAPI.Service.Layer.Implementation
 
         public bool Register(UserRegistration register)
         { 
-            UserLogin userLogin = _mapper.Map<UserRegistration, UserLogin>(register);
-            userLogin.UserLoginId = Guid.NewGuid();
+            HisUser userLogin = _mapper.Map<UserRegistration, HisUser>(register);
+            userLogin.UserId = 1;
             userLogin.IsActive = true;
             userLogin.CreatedOn = DateTime.Now;
-            userLogin.CreatedBy = userLogin.UserLoginId;
+            userLogin.CreatedBy = userLogin.UserId;
             _dbContext.UserLogins.Add(userLogin);
             _dbContext.SaveChanges();
             return true;
+        }
+
+        public IList<PatientViewModel> GetPatients()
+        {
+            IList<HisPatientId> patientIds = _dbContext.PatientIds.AsNoTracking()
+                .ToList();
+            IList<PatientViewModel> patientView = _mapper.Map<IList<HisPatientId>, IList<PatientViewModel>>(patientIds);
+            return patientView;
         }
     }
 }

@@ -8,8 +8,8 @@ namespace App.UserAPI.Helpers.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<UserRegistration, UserLogin>();
-            CreateMap<UserLogin, UserRegistration>();
+            CreateMap<UserRegistration, HisUser>();
+            CreateMap<HisUser, UserRegistration>();
         }
     }
 }

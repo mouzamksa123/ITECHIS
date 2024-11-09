@@ -43,11 +43,11 @@ namespace App.UserAPI
         public static IServiceCollection AddRepositoryDependencies(this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddDbContext<MatrimonyCoreContext>(options =>
+            services.AddDbContext<ItechisCoreContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("MatrimonyCore"),
-                b => b.MigrationsAssembly(typeof(MatrimonyCoreContext).Assembly.FullName)), ServiceLifetime.Transient);
+                b => b.MigrationsAssembly(typeof(ItechisCoreContext).Assembly.FullName)), ServiceLifetime.Transient);
 
-            services.AddTransient<IApplicationDBContext>(provider => provider.GetService<MatrimonyCoreContext>());
+            services.AddTransient<IApplicationDBContext>(provider => provider.GetService<ItechisCoreContext>());
             return services;
         }
         public static IServiceCollection AddEncryptionDependencies(this IServiceCollection services,
