@@ -10,6 +10,8 @@ namespace App.UserAPI.Helpers.AutoMapper
         {
             CreateMap<UserRegistration, HisUser>();
             CreateMap<HisUser, UserRegistration>();
+            CreateMap<HisPatientId, PatientViewModel>();
+            CreateMap<PatientViewModel, HisPatientId>();
         }
     }
 }
