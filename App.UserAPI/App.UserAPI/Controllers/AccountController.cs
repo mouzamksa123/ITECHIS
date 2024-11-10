@@ -85,11 +85,5 @@ namespace App.UserAPI.Controllers
             }
             return null;
         }
-
-        [HttpGet("getPatients")]
-        public async Task<IActionResult> GetPatients()
-        {
-            return Ok(_accountBusiness.GetPatients());
-        }
     }
 }

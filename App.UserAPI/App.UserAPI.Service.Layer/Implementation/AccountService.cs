@@ -51,12 +51,5 @@ namespace App.UserAPI.Service.Layer.Implementation
             return true;
         }
 
-        public IList<PatientViewModel> GetPatients()
-        {
-            IList<HisPatientId> patientIds = _dbContext.PatientIds.AsNoTracking()
-                .ToList();            
-            IList<PatientViewModel> patientView = _mapper.Map<IList<HisPatientId>, IList<PatientViewModel>>(patientIds);
-            return patientView;
-        }
     }
 }

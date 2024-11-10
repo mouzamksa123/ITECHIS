@@ -31,6 +31,7 @@ namespace App.UserAPI
         {
             services.AddScoped<IMasterBusiness, MasterBusiness>();
             services.AddScoped<IAccountBusiness, AccountBusiness>();
+            services.AddScoped<IPatientBusiness, PatientBusiness>();
             return services;
         }
         public static IServiceCollection AddServiceDependencies(this IServiceCollection services,
@@ -38,6 +39,7 @@ namespace App.UserAPI
         {
             services.AddScoped<IMasterService, MasterService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IPatientService, PatientService>();
             return services;
         }
         public static IServiceCollection AddRepositoryDependencies(this IServiceCollection services,
